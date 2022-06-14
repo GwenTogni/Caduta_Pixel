@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Livello 2</title>
+	<style>
+		.pulsante {
+			position: absolute;
+			display: none;
+			bottom: -50px;
+			height: 25px;
+			width: max-content;
+			font-family: sans-serif;
+			font-size: medium;
+			background-color: rgb(207, 207, 207);
+			border: none;
+			border-radius: 20px;
+			left: 40px;
+		}
+
+		.pulsante:hover {
+			background-color: rgb(150, 150, 150);
+		}
+
+		.pulsante:active {
+			background-color: rgb(230, 230, 230);
+		}
+
+		.indice {
+			position: absolute;
+			bottom: -50px;
+			height: 25px;
+			width: max-content;
+			font-family: sans-serif;
+			font-size: medium;
+			background-color: rgb(207, 207, 207);
+			border: none;
+			border-radius: 20px;
+			right: 40px;
+		}
+
+		.indice:hover {
+			background-color: rgb(170, 170, 170);
+		}
+
+		.indice:active {
+			background-color: rgb(230, 230, 230);
+		}
+
+		video {
+			display: none;
+		}
+
+		body {
+			position: absolute;
+			top: 0;
+		}
+
+		.p5Canvas {
+    		background-color: #000000;
+			border-radius: 20px;
+			margin-left: 40px;
+			margin-right: 40px;
+		}
+
+		h1 {
+			font-family: sans-serif;
+			margin-left: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Caduta Pixel!</h1>
+	<form action="http://127.0.0.1:5500/livello_3.html">
+		<button
+			id="pulsante"
+			class="pulsante"
+		>
+			PROSSIMO LIVELLO
+		</button>
+	</form>
+
+	<form action="https://ixd-supsi.github.io/inter-faccia/">
+		<button
+			class="indice"
+		>
+			INDICE
+		</button>
+	</form>
+
+	<video
+		autoplay="true"
+	>
+	</video>
+
+	<script src="./lib/face-api/face-api.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+	
+	<script src="game_2.js"></script>
+	<script src="fd.js"></script>
+	
+</body>
+</html>
