@@ -131,7 +131,6 @@ function schermataGioco () {
             audio.autoplay(true);
 
             schermo = 2
-            ripristina ()
         }
 
     //la velocità si resetta

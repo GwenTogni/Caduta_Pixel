@@ -99,7 +99,7 @@ function schermataGioco () {
             }
     
             if (punteggio>=3) {
-                palline[i].velocità += 0.005
+                palline[i].velocità += 0.002
             }
     
             if (punteggio<1) {
@@ -138,6 +138,7 @@ function schermataGameOver(){
     text('GAME OVER', width / 2, height / 2 - 20)
     text("vite restanti = " + vite, width / 2, height / 2 + 20)
     text('Clicca per provare di nuovo.', width / 2, height / 2 + 80);
+    ripristina ()
 }
 
 function schermataWin(){

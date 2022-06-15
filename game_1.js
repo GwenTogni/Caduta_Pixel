@@ -111,19 +111,6 @@ function schermataWin(){
     text('Vai al livello 2!', width / 2, height / 2 + 80);
 }
 
-function mousePressed(){
-    if(schermo == 0){
-        schermo = 1
-    } else if(schermo == 2){
-        schermo = 1
-    }
-}
-
-function ripristina(){
-    punteggio=0;
-    vite=3;
-}
-
 class Ostacoli {
 
     constructor (altezza, velocità, colore) {
