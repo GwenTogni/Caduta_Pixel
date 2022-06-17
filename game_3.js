@@ -77,81 +77,81 @@ function schermataGioco () {
 
     rect(ominoX, ominoY, 80, 40)
 
-    if(schermo == 1){
+        if(schermo == 1){
 
-        for (let i=0; i<palline.length; i++) {
+            for (let i=0; i<palline.length; i++) {
 
-            palline[i].muovi()
+                palline[i].muovi()
+            
+    //movimenti rosso e verde
+        //se il verde cade
+            if(y1 >= height){
+                y1=-20
+                x1=random(width/4, width-width/4)
+            }
+
+        //se prendi il verde
+            if(y1 > height - 60 && x1 > ominoX - 40 && x1 < ominoX + 40){
+                background(100, 255, 100)
+
+                audio = createAudio('assets/prendi_pixel.mp3');
+                audio.autoplay(true);
+
+                y1=-20
+                x1=random(width/4, width-width/4)
+                punteggio+= 1
+            }
+
+        //se schivi il rosso
+            if (palline[i].y>height + palline[i].altezza){
+                palline[i].resetta ()
+            }
         
-//movimenti rosso e verde
-    //se il verde cade
-        if(y1 >= height){
-            y1=-20
-            x1=random(width/4, width-width/4)
+        //se prendi il rosso
+            if (palline[i].y > height - 10 - palline[i].altezza/2 && palline[i].y < height - 10 && palline[i].x >= ominoX- palline[i].altezza/2 && palline[i].x<ominoX+ palline[i].altezza/2){
+                background(255, 100, 100)
+
+                // audio = createAudio('assets/scontro.wav');
+                audio.autoplay(true);
+
+                palline[i].resetta ()
+                vite-=1
+            }
+        
+        //la velocità aumenta se aumenta il punteggio
+            if(punteggio>=3){
+                velocità += 0.0005
+                palline[i].velocità += 0.005
+            }
+
+        //sconfitta
+            if(vite<1){
+
+                audio = createAudio('assets/game_over.wav');
+                audio.autoplay(true);
+
+                schermo = 2
+            }
+
+        //la velocità si resetta
+            if (punteggio<1) {
+                palline[i].velocità = random(0.5, 2)
+                velocità = 1
+            }
+
+        //vittoria
+            if(punteggio>=10){
+
+                audio = createAudio('assets/vittoria.wav');
+                audio.autoplay(true);
+
+                document.getElementById("pulsante").style.display = "block"
+                schermo = 3
+            }
+
+            palline[i].disegna ()
         }
-
-    //se prendi il verde
-        if(y1 > height - 60 && x1 > ominoX - 40 && x1 < ominoX + 40){
-            background(100, 255, 100)
-
-            audio = createAudio('assets/prendi_pixel.mp3');
-            audio.autoplay(true);
-
-            y1=-20
-            x1=random(width/4, width-width/4)
-            punteggio+= 1
-        }
-
-    //se schivi il rosso
-        if (palline[i].y>height + palline[i].altezza){
-            palline[i].resetta ()
-        }
-    
-    //se prendi il rosso
-        if (palline[i].y > height - 10 - palline[i].altezza/2 && palline[i].y < height - 10 && palline[i].x >= ominoX- palline[i].altezza/2 && palline[i].x<ominoX+ palline[i].altezza/2){
-            background(255, 100, 100)
-
-            audio = createAudio('assets/scontro.wav');
-            audio.autoplay(true);
-
-            palline[i].resetta ()
-            vite-=1
-        }
-    
-    //la velocità aumenta se aumenta il punteggio
-        if(punteggio>=3){
-            velocità += 0.0005
-            palline[i].velocità += 0.005
-        }
-
-    //sconfitta
-        if(vite<1){
-
-            audio = createAudio('assets/game_over.wav');
-            audio.autoplay(true);
-
-            schermo = 2
-        }
-
-    //la velocità si resetta
-        if (punteggio<1) {
-            palline[i].velocità = random(0.5, 2)
-            velocità = 1
-        }
-
-    //vittoria
-        if(punteggio>=10){
-
-            audio = createAudio('assets/vittoria.wav');
-            audio.autoplay(true);
-
-            document.getElementById("pulsante").style.display = "block"
-            schermo = 3
-        }
-
-        palline[i].disegna ()
     }
-}
     fill(255)
     text("punteggio " + punteggio, 70, 30)
     text("vite " + vite, 250,30)
@@ -212,6 +212,7 @@ function mousePressed(){
     } else if(schermo == 2){
         audio = createAudio('assets/pulsante.wav');
         audio.autoplay(true);
+        ripristina()
         schermo = 1
     }
 }

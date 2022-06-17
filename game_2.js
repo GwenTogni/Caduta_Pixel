@@ -91,7 +91,7 @@ function schermataGioco () {
             if (palline[i].y > ominoY - palline[i].altezza/2 && palline[i].y < ominoY && palline[i].x >= ominoX - palline[i].altezza/2 && palline[i].x < ominoX + palline[i].altezza/2){
                 background(255, 100, 100)
 
-                audio = createAudio('assets/scontro.wav');
+                // audio = createAudio('assets/scontro.wav');
                 audio.autoplay(true);
 
                 palline[i].resetta ()
@@ -138,7 +138,6 @@ function schermataGameOver(){
     text('GAME OVER', width / 2, height / 2 - 20)
     text("vite restanti = " + vite, width / 2, height / 2 + 20)
     text('Clicca per provare di nuovo.', width / 2, height / 2 + 80);
-    ripristina ()
 }
 
 function schermataWin(){
@@ -186,6 +185,7 @@ function mousePressed(){
     } else if(schermo == 2){
         audio = createAudio('assets/pulsante.wav');
         audio.autoplay(true);
+        ripristina ()
         schermo = 0
     }
 }
