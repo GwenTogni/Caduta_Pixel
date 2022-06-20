@@ -111,7 +111,7 @@ function schermataGioco () {
             if (palline[i].y > height - 10 - palline[i].altezza/2 && palline[i].y < height - 10 && palline[i].x >= ominoX- palline[i].altezza/2 && palline[i].x<ominoX+ palline[i].altezza/2){
                 background(255, 100, 100)
 
-                // audio = createAudio('assets/scontro.wav');
+                audio = createAudio('assets/scontro.wav');
                 audio.autoplay(true);
 
                 palline[i].resetta ()
