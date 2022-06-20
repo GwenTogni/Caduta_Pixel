@@ -14,7 +14,7 @@ function setup (){
     createCanvas(windowWidth - 90, windowHeight - 200)
 
     init(function(){
-        schermo = 1
+        schermo = 0
     })
 }
 
