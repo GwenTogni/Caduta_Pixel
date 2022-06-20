@@ -69,11 +69,87 @@ function schermataGioco () {
     rectMode(CENTER)
 
     const cx = constrain(map(centerX, 0.7, 0.3, 0, width), 0, width)
-    ominoX = ominoX + (cx - ominoX) * 0.2
+    ominoX = ominoX + (cx - ominoX) * 0.1
 
     const ominoY = height-50
 
-    rect(ominoX, ominoY, 80, 40)
+       //faccia
+       rect(ominoX + 35, ominoY, 5, 5)
+       rect(ominoX + 30, ominoY, 5, 5)
+       rect(ominoX + 25, ominoY, 5, 5)
+       rect(ominoX + 20, ominoY, 5, 5)
+       rect(ominoX + 15, ominoY, 5, 5)
+       rect(ominoX + 10, ominoY, 5, 5)
+       rect(ominoX + 5, ominoY, 5, 5)
+       rect(ominoX, ominoY, 5, 5)
+       rect(ominoX - 5, ominoY, 5, 5)
+       rect(ominoX - 10, ominoY, 5, 5)
+       rect(ominoX - 15, ominoY, 5, 5)
+       rect(ominoX - 20, ominoY, 5, 5)
+       rect(ominoX - 25, ominoY, 5, 5)
+       rect(ominoX - 30, ominoY, 5, 5)
+       rect(ominoX - 35, ominoY, 5, 5)
+   
+       rect(ominoX - 35, ominoY - 5, 5, 5)
+       rect(ominoX - 35, ominoY - 10, 5, 5)
+       rect(ominoX - 35, ominoY - 15, 5, 5)
+       rect(ominoX - 35, ominoY - 20, 5, 5)
+       rect(ominoX - 35, ominoY - 25, 5, 5)
+       rect(ominoX - 35, ominoY - 30, 5, 5)
+       rect(ominoX - 35, ominoY - 35, 5, 5)
+       rect(ominoX - 35, ominoY - 40, 5, 5)
+       rect(ominoX - 35, ominoY - 45, 5, 5)
+   
+       rect(ominoX + 35, ominoY - 5, 5, 5)
+       rect(ominoX + 35, ominoY - 10, 5, 5)
+       rect(ominoX + 35, ominoY - 15, 5, 5)
+       rect(ominoX + 35, ominoY - 20, 5, 5)
+       rect(ominoX + 35, ominoY - 25, 5, 5)
+       rect(ominoX + 35, ominoY - 30, 5, 5)
+       rect(ominoX + 35, ominoY - 35, 5, 5)
+   
+       rect(ominoX - 30, ominoY - 50, 5, 5)
+       rect(ominoX - 25, ominoY - 50, 5, 5)
+       rect(ominoX - 20, ominoY - 50, 5, 5)
+       rect(ominoX - 15, ominoY - 50, 5, 5)
+   
+       rect(ominoX - 5, ominoY - 50, 5, 5)
+       rect(ominoX, ominoY - 50, 5, 5)
+       rect(ominoX + 5, ominoY - 50, 5, 5)
+       rect(ominoX + 10, ominoY - 50, 5, 5)
+   
+       rect(ominoX - 10, ominoY - 45, 5, 5)
+       rect(ominoX + 15, ominoY - 45, 5, 5)
+   
+       rect(ominoX - 10, ominoY - 40, 5, 5)
+       rect(ominoX - 5, ominoY - 40, 5, 5)
+       rect(ominoX, ominoY - 40, 5, 5)
+       rect(ominoX + 5, ominoY - 40, 5, 5)
+       rect(ominoX + 10, ominoY - 40, 5, 5)
+       rect(ominoX + 15, ominoY - 40, 5, 5)
+       rect(ominoX + 20, ominoY - 40, 5, 5)
+       rect(ominoX + 25, ominoY - 40, 5, 5)
+       rect(ominoX + 30, ominoY - 40, 5, 5)
+   
+       //occhi
+       rect(ominoX - 20, ominoY - 25, 5, 5)
+       rect(ominoX - 25, ominoY - 30, 5, 5)
+       rect(ominoX - 25, ominoY - 20, 5, 5)
+       rect(ominoX - 15, ominoY - 30, 5, 5)
+       rect(ominoX - 15, ominoY - 20, 5, 5)
+   
+       rect(ominoX + 20, ominoY - 25, 5, 5)
+       rect(ominoX + 25, ominoY - 20, 5, 5)
+       rect(ominoX + 25, ominoY - 30, 5, 5)
+       rect(ominoX + 15, ominoY - 20, 5, 5)
+       rect(ominoX + 15, ominoY - 30, 5, 5)
+   
+       //bocca
+       rect(ominoX + 5, ominoY - 10, 5, 5)
+       rect(ominoX + 10, ominoY - 10, 5, 5)
+       rect(ominoX, ominoY - 10, 5, 5)
+       rect(ominoX - 5, ominoY - 10, 5, 5)
+       rect(ominoX + 15, ominoY - 5, 5, 5)
 
     if(schermo == 1){
 
@@ -88,7 +164,7 @@ function schermataGioco () {
             }
         
         //se prendi il rosso
-            if (palline[i].y > ominoY - palline[i].altezza/2 && palline[i].y < ominoY && palline[i].x >= ominoX - palline[i].altezza/2 && palline[i].x < ominoX + palline[i].altezza/2){
+            if (palline[i].y > ominoY - palline[i].altezza && palline[i].y <= ominoY && palline[i].x >= ominoX - palline[i].altezza/2 && palline[i].x < ominoX + palline[i].altezza/2){
                 background(255, 100, 100)
 
                 audio = createAudio('assets/scontro.wav');

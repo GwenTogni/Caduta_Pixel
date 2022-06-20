@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Caduta Pixel!</title>
-		<style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Livello 3</title>
+	<style>
 		.pulsante {
 			position: absolute;
 			display: none;
@@ -57,68 +57,49 @@
 			top: 0;
 		}
 
-		canvas {
+		.p5Canvas {
     		background-color: #000000;
 			border-radius: 20px;
 			margin-left: 40px;
 			margin-right: 40px;
-			width: 100%;
-			height: 100%;
 		}
 
 		h1 {
 			font-family: sans-serif;
 			margin-left: 40px;
 		}
+	</style>
+</head>
+<body>
+	<h1>Caduta Pixel!</h1>
 
-		pre {
-			margin-left: 40px;
-			font-family: sans-serif;
-		}
-		</style>
-	</head>
-	<body>
-		<video autoplay="true"></video>
-		<h1>Caduta Pixel!</h1>
-		<canvas
+	<form action="livello_4-2.html">
+		<button
+			id="pulsante"
+			class="pulsante"
 		>
-		</canvas>
-		<pre>
-			Sto caricando...
-		</pre>
+			PROSSIMO LIVELLO
+		</button>
+	</form>
 
-		<script src="./lib/face-api/face-api.min.js"></script>
+	<form action="https://ixd-supsi.github.io/inter-faccia/">
+		<button
+			class="indice"
+		>
+			INDICE
+		</button>
+	</form>
 
-			</br>
-			</br>
-			</br>
-			<form action="http://127.0.0.1:5500/livello_1-1.html">
-				<button
-					id="pulsante1"
-					class="pulsante"
-				>
-					START
-				</button>
-			</form>
+	<video
+		autoplay="true"
+	>
+	</video>
 
-			<form action="http://127.0.0.1:5500/livello_1-2.html">
-				<button
-				id="pulsante2"
-				class="pulsante"
-				>
-					START
-				</button>
-			</form>
-
-			<form action="http://127.0.0.1:5500/livello_1-3.html">
-				<button
-				id="pulsante3"
-				class="pulsante"
-				>
-					START
-				</button>
-			</form>
-
-			<script src="inizio.js"></script>
-	</body>
+	<script src="./lib/face-api/face-api.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+	
+	<script src="fd.js"></script>
+	<script src="game_3-2.js"></script>
+	
+</body>
 </html>
